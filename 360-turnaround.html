@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>360° Turn Around | Relationship Coaching for Individuals and Couples</title>
+<meta name="description" content="Compassionate relationship coaching to repair communication, heal conflict, and reconnect emotionally. Schedule a free Clarity Call.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Comfortaa:wght@300;400;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1f1d;--bg2:#12302c;--ink:#f1f5ef;--mute:#93aea8;--line:rgba(243,220,147,.16);--acc:#f3dc93;--blush:#e9a7a0;--teal:#4f8a86;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font:300 17px/1.75 Comfortaa,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.d{font-family:Marcellus,Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:1}
+.sc{font-family:'Mrs Saint Delafield',cursive;font-weight:400;letter-spacing:0;color:var(--acc)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--acc);outline-offset:4px}
+body::after{content:"";position:fixed;inset:-50%;pointer-events:none;z-index:90;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cur,.dot{position:fixed;top:0;left:0;pointer-events:none;z-index:100;border-radius:50%;display:none}
+.cur{width:44px;height:44px;margin:-22px 0 0 -22px;border:1px solid var(--acc);transition:width .4s var(--ease),height .4s var(--ease),margin .4s var(--ease),background .3s}
+.dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--acc)}
+.cur.big{width:84px;height:84px;margin:-42px 0 0 -42px;background:rgba(243,220,147,.1)}
+@media (hover:hover) and (pointer:fine){.cur,.dot{display:block}body,a,button{cursor:none}}
+.glow{position:fixed;width:540px;height:540px;margin:-270px 0 0 -270px;top:0;left:0;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(233,167,160,.09),transparent 65%)}
+nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:80;display:flex;align-items:center;gap:30px;padding:8px 26px;border:1px solid var(--line);border-radius:99px;background:rgba(11,31,29,.45);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:transform .6s var(--ease)}
+nav.hide{transform:translate(-50%,-140%)}
+nav b{font:400 30px/1 'Mrs Saint Delafield',cursive;color:var(--acc);white-space:nowrap}
+nav .l{display:flex;gap:22px;font-size:13px;color:var(--mute)}
+nav .l a:hover{color:var(--ink)}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:18px 36px;border-radius:99px;border:1px solid var(--acc);color:var(--ink);font-weight:600;font-size:15px;overflow:hidden;transition:box-shadow .5s,color .4s,transform .3s var(--ease);will-change:transform}
+.btn::before{content:"";position:absolute;inset:0;background:var(--acc);transform:translateY(101%);transition:transform .6s var(--ease);border-radius:inherit}
+.btn:hover::before{transform:none}
+.btn:hover{color:#10241f;box-shadow:0 0 60px rgba(243,220,147,.35)}
+.btn span{position:relative}
+.btn.xl{padding:26px 54px;font-size:18px}
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;align-content:center;padding:130px 6vw 90px;overflow:hidden;isolation:isolate}
+.bloom{position:absolute;z-index:-2;left:50%;top:-20vh;width:120vw;height:120vw;max-width:1600px;max-height:1600px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 50% 60%,rgba(233,167,160,.4),rgba(243,220,147,.12) 35%,rgba(79,138,134,.12) 55%,transparent 70%);filter:blur(30px);animation:fade 4s var(--ease) both}
+@keyframes fade{from{opacity:0}}
+#pc,#pc2{position:absolute;inset:0;z-index:-1;width:100%;height:100%}
+.ring{position:absolute;z-index:-1;border:1px solid var(--line);border-radius:50%;will-change:transform}
+.ring.a{width:min(62vw,680px);aspect-ratio:1;right:-10vw;top:14vh}
+.ring.b{width:min(34vw,360px);aspect-ratio:1;right:6vw;top:24vh;border-color:rgba(233,167,160,.25)}
+.hero h1{font-size:clamp(3.3rem,10.5vw,10.5rem);max-width:13ch;line-height:.98}
+.line{display:block;overflow:hidden;padding:.04em 0 .1em}
+.line>span{display:inline-block;transform:translateY(115%) rotate(3deg);transition:transform 1.5s var(--ease)}
+.in .line>span,.line.in>span{transform:none}
+.hero .l2 span{transition-delay:.12s}.hero .l3 span{transition-delay:.24s}.hero .l4 span{transition-delay:.36s}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.sub{display:flex;flex-wrap:wrap;gap:30px 60px;align-items:end;justify-content:space-between;margin-top:6vh;opacity:0;transform:translateY(20px);transition:all 1.4s var(--ease) .8s}
+.in .sub{opacity:1;transform:none}
+.sub p{max-width:40ch;color:#c9d9d3;font-size:1.05rem}
+/* clarity */
+.cl{padding:22vh 6vw 14vh;position:relative}
+.cl .sc{font-size:clamp(2.6rem,5vw,4.4rem);display:block;margin-bottom:2vh}
+.cl h2{font-size:clamp(2.6rem,7vw,7rem);max-width:14ch;margin-bottom:8vh}
+.cl h2 span{opacity:.15;filter:blur(3px);transition:opacity .5s,filter .5s}
+.cl h2 span.on{opacity:1;filter:none}
+.cl .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;align-items:start}
+.cl p{color:#c9d9d3;max-width:46ch}
+.cl p+p{margin-top:20px;color:var(--mute)}
+.opt{border-left:1px solid var(--line);padding-left:3vw}
+.opt h3{font-size:clamp(1.8rem,3vw,2.8rem);margin-bottom:34px}
+.opt div+div{margin-top:28px}
+.opt b{display:block;font:400 1.5rem Marcellus,serif;color:var(--acc)}
+.opt small{color:var(--mute);font-size:15px}
+/* horizontal */
+.hs{position:relative;height:420vh}
+.hs .stick{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;align-items:center}
+.hs .head{position:absolute;top:13vh;left:6vw;z-index:2;max-width:30ch}
+.hs .head .sc{font-size:clamp(2.4rem,4vw,3.4rem);display:block;line-height:1}
+.hs .head p{color:var(--mute);font-size:15px;margin-top:8px}
+.hs .bar{display:block;width:90px;height:1px;background:var(--line);margin-top:20px;position:relative}
+.hs .bar::after{content:"";position:absolute;inset:0;background:var(--acc);transform-origin:left;transform:scaleX(var(--p,0))}
+.track{display:flex;gap:6vw;padding:14vh 6vw 0;will-change:transform}
+.pan{flex:0 0 min(80vw,960px);height:62vh;position:relative;perspective:1200px}
+.pan h2{font-size:clamp(3rem,8.4vw,8.2rem);position:absolute;left:0;top:0;z-index:2;max-width:8ch}
+.pan .vis{position:absolute;right:0;top:4%;width:44%;height:84%;border-radius:200px 200px 22px 22px;border:1px solid var(--line);overflow:hidden;transform-style:preserve-3d;transition:transform .3s}
+.pan .vis::before{content:"";position:absolute;inset:-20%;background:var(--g);filter:blur(12px);transform:translate3d(var(--px,0),var(--py,0),0) scale(1.1);transition:transform .6s var(--ease)}
+.pan .vis::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(11,31,29,.75))}
+.pan p{position:absolute;left:0;bottom:0;z-index:2;max-width:26ch;color:#d3e2dc;font-size:1.1rem}
+.pan p b{display:block;font:400 .85rem Comfortaa;color:var(--acc);margin-bottom:6px}
+/* programs */
+.pg{padding:18vh 6vw;background:linear-gradient(180deg,var(--bg),var(--bg2) 25%,var(--bg2) 75%,var(--bg))}
+.pg .top{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px;margin-bottom:8vh}
+.pg h2{font-size:clamp(2.6rem,6vw,6rem);max-width:12ch}
+.pg .top p{color:var(--mute);max-width:30ch}
+.pg ul{list-style:none}
+.pg li{border-top:1px solid var(--line);padding:3vh 0;display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center;transition:padding .7s var(--ease)}
+.pg li:last-child{border-bottom:1px solid var(--line)}
+.pg li h3{font-size:clamp(2rem,5.4vw,5.4rem);color:rgba(241,245,239,.35);transition:color .5s,transform .7s var(--ease)}
+.pg li p{color:var(--mute);max-width:40ch;max-height:0;opacity:0;overflow:hidden;transition:max-height .8s var(--ease),opacity .6s}
+.pg li:hover,.pg li.open{padding:5vh 0}
+.pg li:hover h3,.pg li.open h3{color:var(--acc);transform:translateX(18px)}
+.pg li:hover p,.pg li.open p{max-height:200px;opacity:1}
+/* books */
+.bk{padding:20vh 6vw;position:relative;overflow:hidden}
+.bk h2{font-size:clamp(2.6rem,6vw,6rem);max-width:12ch;margin-bottom:10vh}
+.shelf{display:grid;grid-template-columns:1fr 1fr;gap:8vw}
+.book{perspective:1000px}
+.cover{width:min(240px,60%);aspect-ratio:2/3;border-radius:4px 10px 10px 4px;padding:22px 18px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:-12px 20px 50px rgba(0,0,0,.5),inset 6px 0 10px rgba(0,0,0,.25);transform:rotateY(-24deg) rotateX(4deg);transition:transform .6s var(--ease);will-change:transform;margin-bottom:5vh}
+.cover.a{background:linear-gradient(160deg,#0f1b22,#1b2c38 60%,#0b1114);color:#fff}
+.cover.b{background:linear-gradient(180deg,#f0e2b0 0 24%,#dfe8e6 24%);color:#2f5753}
+.cover i{font:normal 400 2rem/1 'Mrs Saint Delafield',cursive;color:var(--acc)}
+.cover.b i{color:#2f5753}
+.cover strong{font:400 1.7rem/1 Marcellus,serif}
+.book h3{font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.2;max-width:24ch;margin-bottom:14px}
+.price{font-size:1.1rem}.price s{color:var(--mute);margin-right:10px}.price b{color:var(--acc);font-weight:600}
+.store{margin-top:10vh}
+/* quote */
+.qt{padding:22vh 6vw;position:relative;text-align:center;overflow:hidden}
+.qt .mark{position:absolute;left:50%;top:6vh;transform:translateX(-50%);font:400 min(60vw,520px)/1 Marcellus,serif;color:transparent;-webkit-text-stroke:1px rgba(243,220,147,.18);pointer-events:none}
+.qt .sc{display:block;font-size:2.6rem;margin-bottom:5vh;position:relative}
+.qt blockquote{position:relative;font:400 clamp(2.2rem,5.6vw,5.8rem)/1.08 Marcellus,serif;letter-spacing:-.02em;max-width:18ch;margin:0 auto 6vh}
+.qt cite{font-style:normal;color:var(--mute);position:relative}
+/* final */
+.fin{position:relative;min-height:110svh;display:grid;place-items:center;text-align:center;padding:16vh 6vw;overflow:hidden;isolation:isolate}
+.fin .bloom{top:auto;bottom:-50vh;animation:none;background:radial-gradient(circle at 50% 30%,rgba(243,220,147,.4),rgba(233,167,160,.22) 35%,rgba(79,138,134,.12) 55%,transparent 70%)}
+.fin h2{font-size:clamp(3.2rem,12vw,12.5rem);margin-bottom:6vh;line-height:.98}
+.fin h2 em{font-style:normal;color:var(--acc)}
+.fin p{max-width:42ch;margin:0 auto 5vh;color:#d3e2dc;font-size:1.05rem}
+footer{padding:28px 6vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--mute);font-size:13px;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(60px) scale(.97);filter:blur(10px);transition:all 1.3s var(--ease)}
+.rv.on{opacity:1;transform:none;filter:none}
+@media (max-width:800px){
+nav .l{display:none}nav{padding:8px 24px}
+.cl .cols{grid-template-columns:1fr}.opt{border-left:0;padding:0;border-top:1px solid var(--line);padding-top:6vh}
+.hs{height:auto}.hs .stick{position:static;height:auto;display:block;padding:12vh 0 6vh}
+.hs .head{position:static;padding:0 6vw 8vh}.track{flex-direction:column;gap:12vh;padding:0 6vw;transform:none!important}
+.pan{flex:none;width:100%;height:auto}
+.pan h2{position:static;font-size:clamp(3rem,15vw,5rem);max-width:none}
+.pan .vis{position:relative;width:100%;height:40vh;margin:4vh 0}
+.pan p{position:static}
+.pg li{grid-template-columns:1fr}.pg li p{max-height:none;opacity:1;margin-top:10px}.pg li h3{color:var(--ink)}
+.shelf{grid-template-columns:1fr;gap:12vh}
+.ring.a{opacity:.5}
+}
+@media (prefers-reduced-motion:reduce){
+*{animation:none!important;transition:none!important}
+.line>span,.rv,.sub{transform:none!important;opacity:1!important;filter:none!important}
+.cl h2 span{opacity:1!important;filter:none!important}
+.hs{height:auto}.hs .stick{position:static;height:auto;display:block;padding:12vh 0}.track{flex-direction:column;transform:none!important;padding:0 6vw}.pan{height:auto;flex:none;width:100%}.pan h2,.pan .vis,.pan p{position:static}.pan .vis{width:100%;height:40vh}
+.pg li p{max-height:none;opacity:1}
+}
+</style>
+</head>
+<body>
+<div class="cur" aria-hidden="true"></div><div class="dot" aria-hidden="true"></div><div class="glow" aria-hidden="true"></div>
+
+<nav id="nav" aria-label="Main">
+  <b>Turnaround</b>
+  <div class="l"><a href="#clarity">Clarity call</a><a href="#help">Support</a><a href="#programs">Programs</a><a href="#books">E-books</a></div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="bloom" data-px=".04"></div>
+  <canvas id="pc" aria-hidden="true"></canvas>
+  <div class="ring a" data-px="-.03"></div><div class="ring b" data-px=".05"></div>
+  <h1><span class="line l1"><span>Restore trust,</span></span><span class="line l2"><span>rebuild connection</span></span><span class="line l3"><span>and save your</span></span><span class="line l4"><span><em>relationship.</em></span></span></h1>
+  <div class="sub">
+    <p>Compassionate relationship coaching for individuals and couples who want to repair communication, heal conflict, and reconnect emotionally.</p>
+    <a class="btn xl mag" href="#book"><span>Schedule a free Clarity Call</span></a>
+  </div>
+</header>
+
+<section class="cl" id="clarity">
+  <span class="sc rv">The Clarity Conversation</span>
+  <h2 id="st">A supportive, judgment-free conversation to understand where you are.</h2>
+  <div class="cols">
+    <div class="rv">
+      <p>Many couples in conflict want to feel heard before they make big decisions. The Clarity Conversation is a short, focused call where you and Jenet talk through what’s happening in your relationship, clarify what matters most to you, and begin to explore options at a pace that feels safe.</p>
+      <p>This isn’t advice you have to follow. It’s a space to be understood, ask questions, and gain perspective without pressure.</p>
+    </div>
+    <div class="opt rv">
+      <h3>You leave with options, not obligations.</h3>
+      <div><b>We listen first</b><small>Your experience matters.</small></div>
+      <div><b>We help you make sense of it</b><small>Clear perspective over quick fixes.</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="hs" id="help" aria-label="Struggling with conflict or distance">
+  <div class="stick">
+    <div class="head"><span class="sc">Struggling with conflict or distance?</span><p>Learn how to communicate better, break unhealthy patterns, and rebuild connection.</p><i class="bar"></i></div>
+    <div class="track" id="trk">
+      <article class="pan"><h2>Communication breakdown</h2><div class="vis" style="--g:radial-gradient(circle at 30% 70%,#e9a7a0,transparent 55%),radial-gradient(circle at 70% 20%,#4f8a86,transparent 60%)"></div><p><b>Struggling to be heard</b>Struggling to be heard or understood.</p></article>
+      <article class="pan"><h2>Recurring conflict</h2><div class="vis" style="--g:radial-gradient(circle at 70% 70%,#f3dc93,transparent 55%),radial-gradient(circle at 20% 20%,#2f6a66,transparent 60%)"></div><p><b>The same fight, again</b>Same arguments keep coming back.</p></article>
+      <article class="pan"><h2>Emotional distance</h2><div class="vis" style="--g:radial-gradient(circle at 50% 80%,#4f8a86,transparent 55%),radial-gradient(circle at 30% 20%,#e9a7a0,transparent 55%)"></div><p><b>Together, yet apart</b>Feeling disconnected or apart.</p></article>
+      <article class="pan"><h2>Trust issues</h2><div class="vis" style="--g:radial-gradient(circle at 40% 75%,#f3dc93,transparent 50%),radial-gradient(circle at 70% 25%,#1d4a46,transparent 60%)"></div><p><b>Safety, rebuilt</b>Finding it hard to feel safe together.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="pg" id="programs">
+  <div class="top"><h2 class="rv">Coaching programs</h2><p class="rv">Choose a category to explore the programs inside.</p></div>
+  <ul>
+    <li><h3>Core Foundation</h3><p>For relationships experiencing deeper conflict, emotional distance, or instability, focused on restoring trust and rebuilding structure.</p></li>
+    <li><h3>Relationship Essentials</h3><p>For couples who want to strengthen communication, reduce recurring tension, and build a more intentional foundation together.</p></li>
+    <li><h3>Healing and Growth</h3><p>For individuals or couples navigating hurt, loss of trust, or unresolved emotional wounds that need careful attention.</p></li>
+    <li><h3>Strategic Mastery</h3><p>Advanced guidance for partners who want to elevate how they problem-solve, collaborate, and grow together.</p></li>
+    <li><h3>Special Focus Topics</h3><p>Focused support for defined issues that need structured attention and practical solutions.</p></li>
+  </ul>
+</section>
+
+<section class="bk" id="books">
+  <h2 class="rv">Read your way forward.</h2>
+  <div class="shelf">
+    <div class="book rv"><div class="cover a"><i>Beyond</i><strong>Beyond the Wedding</strong></div><h3>Beyond the Wedding: Understanding Dating, the Wedding, and the Reality of Marriage</h3><div class="price"><s>$15.00</s><b>$10.00</b></div></div>
+    <div class="book rv"><div class="cover b"><strong>Building Bridges</strong><span style="font-size:11px;line-height:1.3">Navigating love, trust, and growth in marriage</span></div><h3>Building Bridges: A Practical Guide for Restoring Trust, Communication &amp; Intimacy in Your Relationship</h3><div class="price"><s>$15.00</s><b>$10.00</b></div></div>
+  </div>
+  <a class="btn mag store" href="#"><span>Browse the E-book Store</span></a>
+</section>
+
+<section class="qt" aria-label="Client testimonial">
+  <div class="mark" aria-hidden="true" data-px="-.04">“</div>
+  <span class="sc">What our clients are saying</span>
+  <blockquote class="rv">“We learned how to speak honestly without hurting each other. That changed everything.”</blockquote>
+  <cite class="rv">D.B.</cite>
+</section>
+
+<section class="fin" id="book">
+  <div class="bloom" data-px="-.05"></div>
+  <canvas id="pc2" aria-hidden="true"></canvas>
+  <div>
+    <h2><span class="line"><span>Your next chapter</span></span><span class="line"><span><em>starts with a call.</em></span></span></h2>
+    <p class="rv">Be heard first. Decide what comes next at a pace that feels safe.</p>
+    <a class="btn xl mag rv" href="#" id="cta"><span>Schedule a free Clarity Call</span></a>
+  </div>
+</section>
+<footer><span>© 360° Turn Around</span><span>Relationship coaching for individuals and couples</span></footer>
+
+<script>
+(()=>{
+const $=(s,e=document)=>e.querySelector(s),$$=(s,e=document)=>[...e.querySelectorAll(s)];
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches,mob=innerWidth<800;
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+requestAnimationFrame(()=>setTimeout(()=>$('.hero').classList.add('in'),150));
+const st=$('#st');st.innerHTML=st.textContent.split(' ').map(w=>`<span>${w}</span>`).join(' ');
+const words=$$('#st span');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');if(e.target.classList.contains('line'))e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2});
+$$('.rv,.fin .line').forEach(e=>io.observe(e));
+const cur=$('.cur'),dot=$('.dot'),glow=$('.glow');let mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my,nx=0,ny=0;
+if(fine&&!rm){
+ addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;nx=mx/innerWidth-.5;ny=my/innerHeight-.5;dot.style.transform=`translate(${mx}px,${my}px)`});
+ $$('a,button,.pg li').forEach(el=>{el.addEventListener('pointerenter',()=>cur.classList.add('big'));el.addEventListener('pointerleave',()=>cur.classList.remove('big'))});
+ $$('.mag').forEach(el=>{
+  el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.22}px,${(e.clientY-r.top-r.height/2)*.32}px)`});
+  el.addEventListener('pointerleave',()=>el.style.transform='');
+ });
+ $$('.pan').forEach(p=>{const v=$('.vis',p);p.addEventListener('pointermove',e=>{const r=v.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;v.style.transform=`rotateY(${x*14}deg) rotateX(${-y*14}deg)`;v.style.setProperty('--px',x*-40+'px');v.style.setProperty('--py',y*-40+'px')});p.addEventListener('pointerleave',()=>{v.style.transform='';v.style.setProperty('--px','0px');v.style.setProperty('--py','0px')})});
+ $$('.book').forEach(b=>{const c=$('.cover',b);b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`rotateY(${-24+x*30}deg) rotateX(${4-y*20}deg) translateZ(20px)`});b.addEventListener('pointerleave',()=>c.style.transform='')});
+}
+// touch: tap to open program
+$$('.pg li').forEach(li=>li.addEventListener('click',()=>{if(!fine){const o=li.classList.contains('open');$$('.pg li').forEach(x=>x.classList.remove('open'));if(!o)li.classList.add('open')}}));
+// falling petals
+function petals(c,n,up){
+ const x=c.getContext('2d');let w,h,P=[];const dpr=Math.min(devicePixelRatio,2);
+ const rs=()=>{w=c.width=c.offsetWidth*dpr;h=c.height=c.offsetHeight*dpr};rs();addEventListener('resize',rs);
+ for(let i=0;i<n;i++)P.push({x:Math.random(),y:Math.random(),r:Math.random()*3+1.2,s:Math.random()*.00025+.00008,a:Math.random()*.45+.15,d:Math.random(),ph:Math.random()*6});
+ let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);let t=0;
+ (function f(){if(vis){t+=.01;x.clearRect(0,0,w,h);P.forEach(p=>{p.y+=(up?-1:1)*p.s*16;if(p.y>1.03)p.y=-.03;if(p.y<-.03)p.y=1.03;const ox=nx*p.d*40*dpr+Math.sin(t+p.ph)*14*dpr;x.beginPath();x.ellipse(p.x*w+ox,p.y*h,p.r*dpr,p.r*dpr*.6,t+p.ph,0,7);x.fillStyle=up?`rgba(243,220,147,${p.a})`:`rgba(233,167,160,${p.a})`;x.fill()})}if(!rm)requestAnimationFrame(f)})();
+}
+petals($('#pc'),mob?20:55,false);petals($('#pc2'),mob?18:45,true);
+const nav=$('#nav'),hs=$('.hs'),trk=$('#trk'),hd=$('.hs .head'),px=$$('[data-px]');let ly=0,tk=false;
+function frame(){
+ const y=scrollY,vh=innerHeight;
+ nav.classList.toggle('hide',y>ly&&y>300);ly=y;
+ const sr=$('.cl').getBoundingClientRect(),sp=clamp((vh*.8-sr.top)/(vh*.6));
+ words.forEach((w,i)=>w.classList.toggle('on',i/words.length<sp*1.05));
+ if(innerWidth>800&&!rm){const r=hs.getBoundingClientRect(),p=clamp(-r.top/(r.height-vh)),max=trk.scrollWidth-innerWidth+innerWidth*.06;trk.style.transform=`translate3d(${-p*max}px,0,0)`;hd.style.setProperty('--p',p)}
+ px.forEach(e=>{const r=e.getBoundingClientRect();if(r.bottom>0&&r.top<vh){const k=parseFloat(e.dataset.px),b=e.classList.contains('bloom')?'translateX(-50%) ':e.classList.contains('mark')?'translateX(-50%) ':'';e.style.transform=b+`translate3d(${nx*80*k*10}px,${y*-k+ny*60*k*10}px,0)`}});
+ tk=false;
+}
+addEventListener('scroll',()=>{if(!tk){tk=true;requestAnimationFrame(frame)}},{passive:true});
+(function loop(){cx+=(mx-cx)*.14;cy+=(my-cy)*.14;if(fine){cur.style.transform=`translate(${cx}px,${cy}px)`;glow.style.transform=`translate(${cx}px,${cy}px)`}if(!rm)frame();requestAnimationFrame(loop)})();
+frame();
+// Set your booking link here:
+// $('#cta').href='https://your-booking-link';
+})();
+</script>
+</body>
+</html>
